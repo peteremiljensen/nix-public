@@ -138,6 +138,8 @@
     };
 
     runtimePkgs = with pkgs; [
+      tree-sitter
+
       # lsp
       nixd
       gopls
