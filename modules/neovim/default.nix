@@ -33,7 +33,8 @@
       })
     ];
 
-    settings.config_directory = ./config;
+    settings.config_directory = "/Users/peteremiljensen/git/personal/nix-public/modules/neovim/config";
+    # settings.config_directory = ./config;
     hosts.node.nvim-host.enable = false;
     hosts.ruby.nvim-host.enable = false;
 
@@ -46,10 +47,15 @@
           lze
           lzextras
 
+          # kanagawa-nvim
+          gruvbox-nvim
+          gruvbox-material-nvim
+          nordic-nvim
+
           guess-indent-nvim
           nvim-web-devicons
           which-key-nvim
-          tokyonight-nvim
+          # tokyonight-nvim
           todo-comments-nvim
           mini-nvim
 
@@ -86,6 +92,11 @@
     specs.lazy = {
       lazy = true;
       data = with pkgs.vimPlugins; [
+        {
+          pname = "lualine";
+          data = lualine-nvim;
+        }
+
         {
           pname = "gitsigns";
           data = gitsigns-nvim;
@@ -152,12 +163,16 @@
     ];
   });
 in {
-  perSystem = {pkgs, ...}: {
-    packages.neovim = neovim.wrap {
-      inherit pkgs;
+  perSystem = {pkgs, ...}: let
+    neovimWrapped = neovim.wrap {inherit pkgs;};
+  in {
+    apps.neovim = {
+      type = "app";
+      program = lib.getExe neovimWrapped;
     };
+    packages.neovim = neovimWrapped;
   };
-  flake = {
-    neovim = neovim.eval {};
-  };
+  # flake = {
+  #   neovim = neovim.eval {};
+  # };
 }
