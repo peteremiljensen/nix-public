@@ -70,6 +70,7 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable",
         "tmux-dotbar": "tmux-dotbar",
+        "tmux-super-fingers": "tmux-super-fingers",
         "wrappers": "wrappers"
       }
     },
@@ -86,6 +87,22 @@
       "original": {
         "owner": "vaaleyard",
         "repo": "tmux-dotbar",
+        "type": "github"
+      }
+    },
+    "tmux-super-fingers": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1776956630,
+        "narHash": "sha256-GiOkSADuWz19ndsVlKiKatPnplUpmukoZTPakIXWqF0=",
+        "owner": "artemave",
+        "repo": "tmux_super_fingers",
+        "rev": "523dc9b7a79f1ceb8d9be72e22c263c4a7cd3bdf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "artemave",
+        "repo": "tmux_super_fingers",
         "type": "github"
       }
     },

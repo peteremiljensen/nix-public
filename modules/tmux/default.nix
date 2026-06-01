@@ -39,6 +39,10 @@
           name = "vim-tmux-navigator";
           plugin = pkgs.tmuxPlugins.vim-tmux-navigator;
         }
+        {
+          name = "tmux_super_fingers";
+          plugin = inputs.tmux-super-fingers;
+        }
 
         # {
         #   name = "sessionx";
@@ -74,6 +78,10 @@ in {
     # };
     tmux-dotbar = {
       url = "github:vaaleyard/tmux-dotbar";
+      flake = false;
+    };
+    tmux-super-fingers = {
+      url = "github:artemave/tmux_super_fingers";
       flake = false;
     };
     # tmux-sessionx = {
