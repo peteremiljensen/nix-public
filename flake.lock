@@ -70,7 +70,6 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable",
         "tmux-dotbar": "tmux-dotbar",
-        "tmux-ukiyo": "tmux-ukiyo",
         "wrappers": "wrappers"
       }
     },
@@ -87,22 +86,6 @@
       "original": {
         "owner": "vaaleyard",
         "repo": "tmux-dotbar",
-        "type": "github"
-      }
-    },
-    "tmux-ukiyo": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1779185178,
-        "narHash": "sha256-h53OVIQojcFXuGV7UDivTdu7pQXm7FkI5GrdoZkan9o=",
-        "owner": "Nybkox",
-        "repo": "tmux-ukiyo",
-        "rev": "2e273d1bf39d9132b1c55d6fe2dc3577e0e84099",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Nybkox",
-        "repo": "tmux-ukiyo",
         "type": "github"
       }
     },

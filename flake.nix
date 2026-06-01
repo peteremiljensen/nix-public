@@ -15,10 +15,6 @@
       url = "github:vaaleyard/tmux-dotbar";
       flake = false;
     };
-    tmux-ukiyo = {
-      url = "github:Nybkox/tmux-ukiyo";
-      flake = false;
-    };
     wrappers = {
       url = "github:BirdeeHub/nix-wrapper-modules";
       inputs.nixpkgs.follows = "nixpkgs";
