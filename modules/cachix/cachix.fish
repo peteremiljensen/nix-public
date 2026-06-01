@@ -1,5 +1,3 @@
-#!/usr/bin/env fish
-
 set -gx cache peteremiljensen
 set -gx GUM_SPIN_SHOW_ERROR true
 set -gx GUM_SPIN_SHOW_STDOUT true
@@ -10,9 +8,6 @@ function log
     if test (count $argv) -lt 2
         set -f log_level info
     end
-
-    # set -e argv[1]
-    # set -e argv[1]
 
     gum log "$text" -l "$log_level" >&2; or exit $status
 end
@@ -29,8 +24,6 @@ function spin_fn
     set -l title $argv[1]
     set -l fn_name $argv[2]
     set -l fn_args $argv[3..]
-    # set -e argv[1]
-    # set -e argv[1]
 
     gum spin \
         --spinner dot \
