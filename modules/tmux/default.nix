@@ -43,6 +43,10 @@
           name = "tmux_super_fingers";
           plugin = inputs.tmux-super-fingers;
         }
+        {
+          name = "tpad";
+          plugin = inputs.tmux-tpad;
+        }
 
         # {
         #   name = "sessionx";
@@ -82,6 +86,10 @@ in {
     };
     tmux-super-fingers = {
       url = "github:artemave/tmux_super_fingers";
+      flake = false;
+    };
+    tmux-tpad = {
+      url = "github:Subbeh/tmux-tpad";
       flake = false;
     };
     # tmux-sessionx = {

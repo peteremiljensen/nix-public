@@ -19,6 +19,10 @@
       url = "github:artemave/tmux_super_fingers";
       flake = false;
     };
+    tmux-tpad = {
+      url = "github:Subbeh/tmux-tpad";
+      flake = false;
+    };
     wrappers = {
       url = "github:BirdeeHub/nix-wrapper-modules";
       inputs.nixpkgs.follows = "nixpkgs";

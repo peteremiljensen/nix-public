@@ -71,6 +71,7 @@
         "nixpkgs-stable": "nixpkgs-stable",
         "tmux-dotbar": "tmux-dotbar",
         "tmux-super-fingers": "tmux-super-fingers",
+        "tmux-tpad": "tmux-tpad",
         "wrappers": "wrappers"
       }
     },
@@ -103,6 +104,22 @@
       "original": {
         "owner": "artemave",
         "repo": "tmux_super_fingers",
+        "type": "github"
+      }
+    },
+    "tmux-tpad": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1769923803,
+        "narHash": "sha256-yniFY0ofOeuFHX9CkV5lHNrUcaF2gsu9m6+co6ZddSQ=",
+        "owner": "Subbeh",
+        "repo": "tmux-tpad",
+        "rev": "1eb7276cc2e9a273db12b4c23fceda623b91fd78",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Subbeh",
+        "repo": "tmux-tpad",
         "type": "github"
       }
     },
