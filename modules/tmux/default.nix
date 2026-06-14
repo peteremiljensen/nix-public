@@ -16,6 +16,12 @@
       sourceSensible = true;
       prefix = "C-x";
 
+      package = pkgs.tmux.overrideAttrs (oldAttrs: {
+        version = "next-3.7";
+        src = inputs.tmux-kitty;
+        patches = [];
+      });
+
       configBefore = builtins.readFile ./tmux.before.conf;
 
       # shell = pkgs.lib.getExe pkgs.bash;
@@ -76,6 +82,10 @@
     });
 in {
   flake-file.inputs = {
+    tmux-kitty = {
+      url = "github:jixiuf/tmux";
+      flake = false;
+    };
     # tmux-muxbar = {
     #   url = "github:Dlurak/muxbar";
     #   inputs.nixpkgs.follows = "nixpkgs";

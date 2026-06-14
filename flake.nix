@@ -15,6 +15,10 @@
       url = "github:vaaleyard/tmux-dotbar";
       flake = false;
     };
+    tmux-kitty = {
+      url = "github:jixiuf/tmux";
+      flake = false;
+    };
     tmux-super-fingers = {
       url = "github:artemave/tmux_super_fingers";
       flake = false;
