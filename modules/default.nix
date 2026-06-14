@@ -24,4 +24,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
+  flake-file.nixConfig = {
+    extra-substituters = ["https://peteremiljensen.cachix.org"];
+    extra-trusted-public-keys = [
+      "peteremiljensen.cachix.org-1:q6F2VNjqkkSJYFyk8QdI2EyBrJzNPa4fmLT0kFiRkZ8="
+    ];
+  };
 }

@@ -3,6 +3,13 @@
 {
   outputs = inputs: import ./outputs.nix inputs;
 
+  nixConfig = {
+    extra-substituters = [ "https://peteremiljensen.cachix.org" ];
+    extra-trusted-public-keys = [
+      "peteremiljensen.cachix.org-1:q6F2VNjqkkSJYFyk8QdI2EyBrJzNPa4fmLT0kFiRkZ8="
+    ];
+  };
+
   inputs = {
     flake-file.url = "github:vic/flake-file";
     flake-parts = {

@@ -52,11 +52,18 @@ function push_runtime
     set -l pkgs $argv
 
     printf '.#%s'\n $pkgs[1..] | xargs nix build \
-        --quiet \
-        --quiet \
-        --quiet \
         --no-link \
-        --print-out-paths | \
+        --print-out-paths  \
+        --system aarch64-darwin | \
+        string collect | read -zla paths
+    pipecheck
+
+    cachix push $cache $paths[1..]; or exit $status
+
+    printf '.#%s'\n $pkgs[1..] | xargs nix build \
+        --no-link \
+        --print-out-paths  \
+        --system x86_64-linux | \
         string collect | read -zla paths
     pipecheck
 
@@ -68,8 +75,9 @@ if test (count $argv) -gt 0; and set -lx fn $argv[1]; and functions -q "$fn"
     exit 0
 end
 
-spin_fn "Pushing flake inputs..." "push_inputs"
+# spin_fn "Pushing flake inputs..." "push_inputs"
 
 set -l package_list (spin_fn "Reading flake packages..." "packages")
 gum confirm "Pushing packages: $(echo $package_list | string join ' ')"; or exit $status
-spin_fn "Pushing runtime closure..." push_runtime $package_list
+# spin_fn "Pushing runtime closure..." push_runtime $package_list
+push_runtime $package_list
