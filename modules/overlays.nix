@@ -6,6 +6,8 @@
         (final: prev: {
           stable = inputs.nixpkgs-stable.legacyPackages.${system};
         })
+
+        inputs.neovim-nightly-overlay.overlays.default
       ];
     };
   };

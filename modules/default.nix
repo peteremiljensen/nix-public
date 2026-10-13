@@ -21,7 +21,7 @@
     nixpkgs-stable.url = "https://flakehub.com/f/NixOS/nixpkgs/*";
 
     wrappers = {
-      url = "github:BirdeeHub/nix-wrapper-modules";
+      url = "github:nix-community/nix-wrapper-modules";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

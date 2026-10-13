@@ -4,8 +4,12 @@
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } ./modules;
 
   nixConfig = {
-    extra-substituters = [ "https://peteremiljensen.cachix.org" ];
+    extra-substituters = [
+      "https://nix-community.cachix.org"
+      "https://peteremiljensen.cachix.org"
+    ];
     extra-trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "peteremiljensen.cachix.org-1:q6F2VNjqkkSJYFyk8QdI2EyBrJzNPa4fmLT0kFiRkZ8="
     ];
   };
@@ -16,6 +20,7 @@
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1";
     nixpkgs-stable.url = "https://flakehub.com/f/NixOS/nixpkgs/*";
     tmux-dotbar = {
@@ -31,7 +36,7 @@
       flake = false;
     };
     wrappers = {
-      url = "github:BirdeeHub/nix-wrapper-modules";
+      url = "github:nix-community/nix-wrapper-modules";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
