@@ -1,6 +1,7 @@
 {inputs, ...}: {
   imports = [
     inputs.flake-file.flakeModules.default
+    ./overlays.nix
     ./neovim
     ./tmux
     ./cachix
@@ -24,6 +25,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
+  flake-file.outputs = "flake-parts";
 
   flake-file.nixConfig = {
     extra-substituters = ["https://peteremiljensen.cachix.org"];

@@ -33,8 +33,8 @@
       })
     ];
 
-    settings.config_directory = "/Users/peteremiljensen/git/personal/nix-public/modules/neovim/config";
-    # settings.config_directory = ./config;
+    # settings.config_directory = "/Users/peteremiljensen/git/personal/nix-public/modules/neovim/config";
+    settings.config_directory = ./config;
     hosts.node.nvim-host.enable = false;
     hosts.ruby.nvim-host.enable = false;
 

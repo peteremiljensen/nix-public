@@ -1,7 +1,7 @@
-# DO-NOT-EDIT. This file was auto-generated using github:vic/flake-file.
+# DO-NOT-EDIT. This file was auto-generated using github:denful/flake-file.
 # Use `nix run .#write-flake` to regenerate it.
 {
-  outputs = inputs: import ./outputs.nix inputs;
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } ./modules;
 
   nixConfig = {
     extra-substituters = [ "https://peteremiljensen.cachix.org" ];
@@ -20,10 +20,6 @@
     nixpkgs-stable.url = "https://flakehub.com/f/NixOS/nixpkgs/*";
     tmux-dotbar = {
       url = "github:vaaleyard/tmux-dotbar";
-      flake = false;
-    };
-    tmux-kitty = {
-      url = "github:jixiuf/tmux";
       flake = false;
     };
     tmux-super-fingers = {

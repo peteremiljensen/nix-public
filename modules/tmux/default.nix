@@ -72,7 +72,7 @@
 
       runtimePkgs = [
         pkgs.tmux
-        pkgs.sesh
+        pkgs.stable.sesh
         pkgs.fd
         pkgs.fzf
         pkgs.bat
@@ -128,6 +128,6 @@ in {
   };
   flake = {
     # tmux = tmux.config;
-    tmux = tmux.eval {pkgs = inputs.nixpkgs.legacyPackages."aarch64-darwin";};
+    # tmux = tmux.eval {pkgs = inputs.nixpkgs.legacyPackages."aarch64-darwin";};
   };
 }
